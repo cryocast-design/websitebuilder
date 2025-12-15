@@ -81,7 +81,19 @@ export default function WhopDashboard() {
     );
   }
 
-  // Not authenticated - shouldn't reach here normally
-  return null;
+  // Not authenticated - show message
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <div className="text-center space-y-4 max-w-md px-4">
+        <div className="h-16 w-16 bg-muted rounded-full flex items-center justify-center mx-auto">
+          <Shield className="h-8 w-8 text-muted-foreground" />
+        </div>
+        <h1 className="text-xl font-semibold text-foreground">Access Required</h1>
+        <p className="text-muted-foreground">
+          Please access this application from your WHOP Dashboard to continue.
+        </p>
+      </div>
+    </div>
+  );
 }
 
